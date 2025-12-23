@@ -4,8 +4,6 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <behaviors/visorbearer_led.dtsi>
 
-#include <behaviors/num_word.dtsi>
-
 #include "zmk-helpers/helper.h"
 #include "visorbearer.h"
 
@@ -18,6 +16,9 @@ ZMK_APPLY_MATRIX_TRANSFORM(visorbearer_13332_transform)
 #define SYM  2
 #define ADJ  3
 #define FNC  4
+
+#define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
+#define MEH LS(LC(LALT))
 
 // Define mod-morph with a *single* mod trigger for less repetition.
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
@@ -69,6 +70,7 @@ ZMK_COMBO(v,     &kp V,        LT3 LT2,         APT                   , COMBO_TE
 // ZMK_COMBO(tab,   &hl LC(LGUI)TAB,  LM3 LM1,     APT NROW NPAD NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 ZMK_COMBO(q,     &kp Q,            LB3 LB2,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+// ZMK_COMBO(npad,  &num_word NPAD,   LB2 LB1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(boot,  &bootloader,      LM4 LB3 LB2, APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(z,     &hl LS(LCTRL)Z,   LB2 LB1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(undo,  &kp LG(Z),        LB3 LB2,                   NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
@@ -94,8 +96,19 @@ ZMK_COMBO(bslash,   &kp BSLH,  RB2 RB1,     APT NROW     NAV      , COMBO_TERM_S
 ZMK_COMBO(rbkt,  &kp RBKT,     RT2 RM2,         APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(rpar,  &rpar_morph,  RT1 RM1,         APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
+
 / {
     behaviors {
+      as: auto_shift {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        tapping_term_ms = <250>;
+        // quick_tap_ms = <0>;
+        require-prior-idle-ms = <100>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&kp>;
+      };
+
       ht: hold_tap {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
@@ -199,10 +212,10 @@ ZMK_COMBO(rpar,  &rpar_morph,  RT1 RM1,         APT NROW      NAV     , COMBO_TE
         sym {
             display-name = "Sym";
             bindings = <
-                            &trans          &trans          &trans          &trans                                          &kp PAGE_UP     &kp LC(PG_UP)   &kp UP          &kp LC(PG_DN)
-            &trans          &kp LCTRL       &kp LALT        &kp LGUI        &trans                                          &kp PAGE_DOWN   &kp LEFT        &kp DOWN        &kp RIGHT       &kp BSLH
-                            &trans          &trans          &trans                                                                          &kp HOME        &kp END         &kp LC(SPACE)
-                                                                            &kp LSHFT       &mo SYM         &trans          &trans
+                            AS(N2)          AS(N3)          AS(N4)          AS(N5)                                          AS(N6)          AS(N7)          AS(N8)          AS(N9)
+            AS(GRAVE)       &sk LCTRL       &sk LALT        &sk LGUI        &sk LC(LALT)                                    AS(BSLH)        AS(MINUS)       AS(EQUAL)       AS(LBKT)        AS(RBKT)
+                            &trans          &trans          &trans                                                                          &trans          &trans          &trans
+                                                                            &trans          &trans          &mo NAV         &kp LSHFT
             >;
         };
 
@@ -226,7 +239,6 @@ ZMK_COMBO(rpar,  &rpar_morph,  RT1 RM1,         APT NROW      NAV     , COMBO_TE
             >;
         };
     };
-  };
 };
 
 &lt {
@@ -247,13 +259,3 @@ ZMK_COMBO(rpar,  &rpar_morph,  RT1 RM1,         APT NROW      NAV     , COMBO_TE
     release-after-ms = <500>;
     quick-release;
 };
-
-// Define mod-morph with a *single* mod trigger for less repetition.
-#define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
-  ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
-                bindings = <BINDING1>, <BINDING2>;)
-
-// Tap: comma | Shift + tap: semicolon
-SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp SEMICOLON)
-// Tap: period | Shift + tap: colon
-SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp COLON)
