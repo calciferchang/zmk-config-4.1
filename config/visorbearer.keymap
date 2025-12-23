@@ -30,6 +30,10 @@ SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp SEMICOLON)
 // Tap: period | Shift + tap: colon
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp COLON)
 
+ZMK_MACRO(qu,
+  bindings = <&kp Q &kp U>;
+)
+
 /* COMBOS */
 #define COMBO_TERM_FAST 18
 #define COMBO_TERM_SLOW 30
