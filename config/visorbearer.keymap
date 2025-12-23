@@ -4,6 +4,10 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <behaviors/visorbearer_led.dtsi>
 
+#include "zmk-helpers/helper.h"
+
+ZMK_APPLY_MATRIX_TRANSFORM(visorbearer_13332_transform)
+
 #define BASE 0
 #define NAV  1
 #define SYM  2
@@ -192,9 +196,9 @@
         base {
             display-name = "Base";
             bindings = <
-            &kp Q           &kp W           &kp F           &kp P           &kp B                                           &kp M           &kp L           &kp U           &kp Y           AS(SEMI)
+                            &kp W           &kp F           &kp P           &kp B                                           &kp M           &kp L           &kp U           &kp Y
             &kp A           &lhm LCTRL R    &lhm LALT S     &lhm LGUI T     &kp G                                           &kp K           &rhm LGUI N     &rhm LALT E     &rhm LCTRL I    &kp O
-            &lhm LSHFT Z    &kp V           &kp C           &kp D                                                                           &kp H           AS(COMMA)       AS(DOT)         AS(FSLH)
+                            &kp V           &kp C           &kp D                                                                           &kp H           AS(COMMA)       AS(DOT)
                                                             &kp LSHFT       &sym_bspc 2 0                   &lt NAV SPACE   &smart_shift
             >;
         };
@@ -202,9 +206,9 @@
         nav {
             display-name = "Nav";
             bindings = <
-            &trans          &trans          &trans          &trans          &trans                                          &kp PAGE_UP     &kp LC(PG_UP)   &kp UP          &kp LC(PG_DN)   &kp DELETE
+                            &trans          &trans          &trans          &trans                                          &kp PAGE_UP     &kp LC(PG_UP)   &kp UP          &kp LC(PG_DN)
             &trans          &kp LCTRL       &kp LALT        &kp LGUI        &trans                                          &kp PAGE_DOWN   &kp LEFT        &kp DOWN        &kp RIGHT       &kp BSLH
-            &trans          &trans          &trans          &trans                                                                          &kp HOME        &kp END         &kp LC(SPACE)   &kp LC(SPACE)
+                            &trans          &trans          &trans                                                                          &kp HOME        &kp END         &kp LC(SPACE)
                                                                             &kp LSHFT       &mo SYM         &trans          &trans
             >;
         };
@@ -212,9 +216,9 @@
         sym {
             display-name = "Sym";
             bindings = <
-            AS(N1)          AS(N2)          AS(N3)          AS(N4)          AS(N5)                                          AS(N6)          AS(N7)          AS(N8)          AS(N9)          AS(N0)
+                            AS(N2)          AS(N3)          AS(N4)          AS(N5)                                          AS(N6)          AS(N7)          AS(N8)          AS(N9)
             AS(GRAVE)       &sk LCTRL       &sk LALT        &sk LGUI        &sk LC(LALT)                                    AS(BSLH)        AS(MINUS)       AS(EQUAL)       AS(LBKT)        AS(RBKT)
-            &trans          &trans          &trans          &trans                                                                          &trans          &trans          &trans          &kp ENTER
+                            &trans          &trans          &trans                                                                          &trans          &trans          &trans
                                                                             &trans          &trans          &mo NAV         &kp LSHFT
             >;
         };
@@ -222,9 +226,9 @@
         adj {
             display-name = "Adj";
             bindings = <
-            &vb_bt_sel 0   &vb_bt_sel 1   &vb_bt_sel 2   &vb_bt_sel 3   &vb_bt_clr                              &vb_ind_con        &vb_ind_bat        &trans          &kp C_BRI_DN    &kp C_BRI_UP
+                            &vb_bt_sel 1    &vb_bt_sel 2    &vb_bt_sel 3    &vb_bt_clr                                      &vb_ind_con     &vb_ind_bat     &trans          &kp C_BRI_DN
             &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &kp C_VOL_DN    &kp C_VOL_UP
-            &bootloader     &trans          &trans          &trans                                                                          &trans          &trans          &trans          &bootloader
+                            &trans          &trans          &trans                                                                          &trans          &trans          &trans
                                                                             &trans          &trans          &trans          &trans
             >;
         };
@@ -232,9 +236,9 @@
         fnc {
             display-name = "Func";
             bindings = <
-            &kp F1          &kp F2          &kp F3          &kp F4          &trans                                          &trans          &trans          &trans          &trans          &trans
+                            &kp F2          &kp F3          &kp F4          &trans                                          &trans          &trans          &trans          &trans
             &kp F5          &kp F6          &kp F7          &kp F8          &trans                                          &trans          &trans          &trans          &trans          &trans
-            &kp F9          &kp F10         &kp F11         &kp F12                                                                         &trans          &trans          &trans          &trans
+                            &kp F10         &kp F11         &kp F12                                                                         &trans          &trans          &trans
                                                                             &trans          &trans          &trans          &trans
             >;
         };
