@@ -206,10 +206,15 @@ SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp COLON)
         base {
             display-name = "Base";
             bindings = <
-                            &kp W           &kp F           &kp P           &kp B                                           &kp J           &kp L           &kp U           &kp Y
-            &kp R           &lhm LCTRL S    &lhm LALT T     &lhm LGUI H     &kp K                                           &kp X           &rhm LGUI N     &rhm LALT A     &rhm LCTRL I    &kp O
-                            &kp C           &kp G           &kp D                                                                           &kp M           &comma_morph    &dot_morph
-                                                            &kp LSHFT       &sym_bspc 2 0                   &lt NAV SPACE   &smart_shift
+//                ╭─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────╮
+                    &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y
+//  ╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
+      &kp R         &lhm LCTRL S  &lhm LALT T  &lhm LGUI H    &kp K             &kp X         &rhm LGUI N   &rhm LALT A   &rhm LCTRL I  &kp O
+//  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯   ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯
+                    &kp C         &kp G        &kp D                                          &kp M        &comma_morph  &dot_morph
+//                ╰─────────────┼─────────────┼─────────────┼─────────────╮   ╭─────────────┼─────────────┼─────────────┼─────────────╯
+                                                &kp LSHFT     &sym_bspc 2 0     &lt NAV SPACE &smart_shift
+//                                            ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
             >;
         };
 
