@@ -6,6 +6,7 @@
 
 #include "zmk-helpers/helper.h"
 #include "visorbearer.h"
+#include "combos.dsti"
 
 ZMK_APPLY_MATRIX_TRANSFORM(visorbearer_13332_transform)
 
@@ -30,24 +31,16 @@ SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp SEMICOLON)
 // Tap: period | Shift + tap: colon
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp COLON)
 
+// Tap: parentheses | Shift + tap: angle bracket
+SIMPLE_MORPH(lpar_morph, SFT, &kp LPAR, &kp LT)
+SIMPLE_MORPH(rpar_morph, SFT, &kp RPAR, &kp GT)
+
+// Tap: backspace | Shift + tap: delete
+SIMPLE_MORPH(bksp_del, SFT, &kp BACKSPACE, &kp DELETE)
 ZMK_MACRO(qu,
   bindings = <&kp Q &kp U>;
 )
 
-/* COMBOS */
-#define COMBO_TERM_FAST 18
-#define COMBO_TERM_SLOW 30
-
-#define COMBO_IDLE_FAST 150
-#define COMBO_IDLE_SLOW 50
-
-/* Crossbody combos */
-ZMK_COMBO(capslock, &kp CAPSLOCK,  LT3 RT3,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(capsword, &caps_word,    LM1 RM1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-
-/* Horizontal combos - left hand */
-ZMK_COMBO(qu,    &qu,          LT2 LT1,         APT                   , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
-ZMK_COMBO(v,     &kp V,        LT3 LT2,         APT                   , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 
 
 / {
