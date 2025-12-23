@@ -6,7 +6,7 @@
 
 #include "zmk-helpers/helper.h"
 #include "visorbearer.h"
-#include "combos.dsti"
+#include "combos.dtsi"
 
 ZMK_APPLY_MATRIX_TRANSFORM(visorbearer_13332_transform)
 
