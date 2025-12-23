@@ -215,27 +215,15 @@ ZMK_APPLY_MATRIX_TRANSFORM(visorbearer_13332_transform)
     quick-release;
 };
 
-/* Magic-shift & auto-layers */
+/ Define mod-morph with a *single* mod trigger for less repetition.
+#define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
+  ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
+                bindings = <BINDING1>, <BINDING2>;)
 
-// Tap: repeat after alpha, else sticky-shift |
-// Shift + tap/ double-tap: caps-word | Hold: shift.
-#define MAGIC_SHIFT &magic_shift LSHFT 0
-ZMK_HOLD_TAP(magic_shift, bindings = <&kp>, <&magic_shift_tap>;
-             flavor = "balanced"; tapping-term-ms = <200>;
-             quick-tap-ms = <QUICK_TAP_MS>;)
-ZMK_MOD_MORPH(magic_shift_tap, bindings = <&shift_repeat>, <&caps_word>;
-              mods = <(MOD_LSFT)>;)
-ZMK_ADAPTIVE_KEY(
-    shift_repeat, bindings = <&sk LSHFT>;
-    repeat {
-      trigger-keys = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z>;
-      bindings = <&key_repeat>;
-      max-prior-idle-ms = <1200>;
-      strict-modifiers;
-    };)
-&caps_word { // Mods deactivate caps-word, requires PR #1451. [TODO: rebase]
-  /delete-property/ ignore-modifiers;
-};
+// Tap: comma | Shift + tap: semicolon
+SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp SEMICOLON)
+// Tap: period | Shift + tap: colon
+SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp COLON)
 
 ZMK_LAYER(base,
 //                ╭─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────╮
@@ -245,6 +233,6 @@ ZMK_LAYER(base,
 //  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯   ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯
                     &kp C         &kp G         &kp D                                         &kp M         &comma_morph  &dot_morph
 //                ╰─────────────┼─────────────┼─────────────┼─────────────╮   ╭─────────────┼─────────────┼─────────────┼─────────────╯
-                                                ___           &lt NAV SPACE     &lt NROW E    MAGIC_SHIFT
+                                                ___           &lt NAV SPACE     &lt NROW E    &sk SHIFT
 //                                            ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
 )
