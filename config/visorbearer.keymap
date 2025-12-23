@@ -6,7 +6,6 @@
 
 #include "zmk-helpers/helper.h"
 #include "visorbearer.h"
-#include "combos.dtsi"
 
 ZMK_APPLY_MATRIX_TRANSFORM(visorbearer_13332_transform)
 
@@ -41,6 +40,61 @@ ZMK_MACRO(qu,
   bindings = <&kp Q &kp U>;
 )
 
+/*    VISORBEARER KEY MATRIX / LAYOUT MAPPING
+      ╭──────────────────┬──────────────────╮
+      │ LT3 LT2 LT1 LT0  │  RT0 RT1 RT2 RT3 │
+  ╭───╯ LM3 LM2 LM1 LM0  │  RM0 RM1 RM2 RM3 ╰───╮
+  │ LM4 LB3 LB2 LB1      │      RB1 RB2 RB3 RM4 │
+  ╰───────────╮ LH1 LH0  │  RH0 RH1 ╭───────────╯
+              ╰──────────┴──────────╯
+*/
+
+/* COMBOS */
+#define COMBO_TERM_FAST 18
+#define COMBO_TERM_SLOW 30
+
+#define COMBO_IDLE_FAST 150
+#define COMBO_IDLE_SLOW 50
+
+/* Crossbody combos */
+ZMK_COMBO(capslock, &kp CAPSLOCK,  LT3 RT3,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(capsword, &caps_word,    LM1 RM1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+
+/* Horizontal combos - left hand */
+ZMK_COMBO(qu,    &qu,          LT2 LT1,         APT                   , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(v,     &kp V,        LT3 LT2,         APT                   , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+
+// Combos overlapping HRMs are set up as hold-taps themselves to allow for instantaneous
+// chording of mods.
+// ZMK_COMBO(enter_l,&hl LC(LGUI)ENTER,LM3 LM2 LM1, APT NROW NPAD NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+// ZMK_COMBO(tab,   &hl LC(LGUI)TAB,  LM3 LM1,     APT NROW NPAD NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+
+ZMK_COMBO(q,     &kp Q,            LB3 LB2,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(npad,  &num_word NPAD,   LB2 LB1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(boot,  &bootloader,      LM4 LB3 LB2, APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(z,     &hl LS(LCTRL)Z,   LB2 LB1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(undo,  &kp LG(Z),        LB3 LB2,                   NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(redo,  &kp LS(LG(Z)),    LB2 LB1,                   NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+
+ZMK_COMBO(nrow,  &mo NROW,         LH1 LH0,     APT                   , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+
+/* Vertical combos - left hand */
+ZMK_COMBO(lbkt,  &kp LBKT,         LT2 LM2,     APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(lpar,  &lpar_morph,      LT1 LM1,     APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+
+/* Horizontal combos - right hand */
+ZMK_COMBO(apos,  &kp APOS,         RT3 RT2,     APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(grave, &kp GRAVE,        RT2 RT1,     APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+
+// ZMK_COMBO(enter_r, &hr RC(RGUI)ENTER,RM3 RM1,     APT NROW NPAD NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+// ZMK_COMBO(bspc_r,  &bksp_del, RM3 RM2 RM1,        APT NROW NPAD NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW, LS(LC(LALT)), KEYS_L)
+
+ZMK_COMBO(fslash,&kp SLASH,    RB3 RB2,         APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(bslash,   &kp BSLH,  RB2 RB1,     APT NROW     NAV      , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+
+/* Vertical combos - right hand */
+ZMK_COMBO(rbkt,  &kp RBKT,     RT2 RM2,         APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(rpar,  &rpar_morph,  RT1 RM1,         APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 
 / {
