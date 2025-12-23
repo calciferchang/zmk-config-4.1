@@ -21,8 +21,6 @@ ZMK_COMBO(capsword, &caps_word,    LM1 RM1,     APT                   , COMBO_TE
 /* Horizontal combos - left hand */
 ZMK_COMBO(qu,    &qu,          LT2 LT1,         APT                   , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(v,     &kp V,        LT3 LT2,         APT                   , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
-// ZMK_COMBO(esc,   &kp ESC,      LT3 LT1,         APT NROW NPAD NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-// ZMK_COMBO(bksp_l,  &bksp_del,    LM3 LM2 LM1,     APT NROW NPAD NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 // Combos overlapping HRMs are set up as hold-taps themselves to allow for instantaneous
 // chording of mods.
