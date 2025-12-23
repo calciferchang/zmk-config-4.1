@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: carrefinho
       url-base: https://github.com/carrefinho
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -13,5 +15,14 @@ manifest:
     - name: zmk-keyboards-visorbearer
       repo-path: visorbearer-zmk-module
       remote: carrefinho
+    - name: zmk-auto-layer
+      remote: urob
+    - name: zmk-helpers
+      remote: urob
+      revision: main
+    - name: zmk-adaptive-key
+      remote: urob
+    - name: zmk-tri-state
+      remote: urob
   self:
     path: config
