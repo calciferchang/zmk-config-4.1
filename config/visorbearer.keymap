@@ -70,6 +70,7 @@ ZMK_COMBO(v,     &kp V,        LT3 LT2,         APT                   , COMBO_TE
 // ZMK_COMBO(tab,   &hl LC(LGUI)TAB,  LM3 LM1,     APT NROW NPAD NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 ZMK_COMBO(q,     &kp Q,            LB3 LB2,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+// ZMK_COMBO(npad,  &num_word NPAD,   LB2 LB1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(boot,  &bootloader,      LM4 LB3 LB2, APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(z,     &hl LS(LCTRL)Z,   LB2 LB1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(undo,  &kp LG(Z),        LB3 LB2,                   NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
