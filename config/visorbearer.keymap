@@ -7,8 +7,11 @@
 #include "zmk-helpers/helper.h"
 #include "visorbearer.h"
 
+/* HOUSEKEEPING */
+// Apply matrix transform for physical layout
 ZMK_APPLY_MATRIX_TRANSFORM(visorbearer_13332_transform)
 
+// Define shorthands for QoL & readability
 #define BASE 0
 #define APT  0
 #define NAV  1
@@ -23,6 +26,7 @@ ZMK_APPLY_MATRIX_TRANSFORM(visorbearer_13332_transform)
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 #define MEH LS(LC(LALT))
 
+/* COMBOS */
 // Define mod-morph with a *single* mod trigger for less repetition.
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
   ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
@@ -69,11 +73,10 @@ ZMK_COMBO(v,     &kp V,        LT3 LT2,         APT                   , COMBO_TE
 
 // Combos overlapping HRMs are set up as hold-taps themselves to allow for instantaneous
 // chording of mods.
-// ZMK_COMBO(enter_l,&hl LC(LGUI)ENTER,LM3 LM2 LM1, APT NROW NPAD NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-// ZMK_COMBO(tab,   &hl LC(LGUI)TAB,  LM3 LM1,     APT NROW NPAD NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(enter_l,&hl LA(LC(LGUI)) ENTER ,LM3 LM2 LM1, APT NAV NROW      , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(tab,   &hl LC(LGUI) TAB,  LM3 LM1,     APT NAV NROW    , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 ZMK_COMBO(q,     &kp Q,            LB3 LB2,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-// ZMK_COMBO(npad,  &num_word NPAD,   LB2 LB1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(boot,  &bootloader,      LM4 LB3 LB2, APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(z,     &hl LS(LCTRL)Z,   LB2 LB1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(undo,  &kp LG(Z),        LB3 LB2,                   NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
@@ -89,8 +92,8 @@ ZMK_COMBO(lpar,  &lpar_morph,      LT1 LM1,     APT NROW      NAV     , COMBO_TE
 ZMK_COMBO(apos,  &kp APOS,         RT3 RT2,     APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(grave, &kp GRAVE,        RT2 RT1,     APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
-// ZMK_COMBO(enter_r, &hr RC(RGUI)ENTER,RM3 RM1,     APT NROW NPAD NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-// ZMK_COMBO(bspc_r,  &bksp_del, RM3 RM2 RM1,        APT NROW NPAD NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW, LS(LC(LALT)), KEYS_L)
+ZMK_COMBO(enter_r, &hr RC(RGUI) ENTER,RM3 RM1,     APT NROW NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(bspc_r,  &bksp_del, RM3 RM2 RM1,        APT NROW  NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW, LS(LC(LALT)), KEYS_L)
 
 ZMK_COMBO(fslash,&kp SLASH,    RB3 RB2,         APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(bslash,   &kp BSLH,  RB2 RB1,     APT NROW     NAV      , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
@@ -157,7 +160,7 @@ ZMK_COMBO(rpar,  &rpar_morph,  RT1 RM1,         APT NROW      NAV     , COMBO_TE
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
         flavor = "balanced";
-        tapping-term-ms = <200>;
+        tapping-term-ms = <240>;
         quick-tap-ms = <125>;
         require-prior-idle-ms = <150>;
         bindings = <&kp>, <&kp>;
@@ -168,7 +171,7 @@ ZMK_COMBO(rpar,  &rpar_morph,  RT1 RM1,         APT NROW      NAV     , COMBO_TE
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
         flavor = "balanced";
-        tapping-term-ms = <200>;
+        tapping-term-ms = <240>;
         quick-tap-ms = <125>;
         require-prior-idle-ms = <150>;
         bindings = <&kp>, <&kp>;
