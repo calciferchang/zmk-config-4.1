@@ -17,38 +17,38 @@
 
 #pragma once
 
-#define LT0  4  // left-top row
-#define LT1  3
-#define LT2  2
-#define LT3  1
+#define LT0  3  // left-top row
+#define LT1  2
+#define LT2  1
+#define LT3  0
 
-#define RT0  5  // right-top row
-#define RT1  6
-#define RT2  7
-#define RT3  8
+#define RT0  4  // right-top row
+#define RT1  5
+#define RT2  6
+#define RT3  7
 
-#define LM0 14  // left-middle row
-#define LM1 13
-#define LM2 12
-#define LM3 11
-#define LM4 10
+#define LM0 12  // left-middle row
+#define LM1 11
+#define LM2 10
+#define LM3  9
+#define LM4  8
 
-#define RM0 15  // right-middle row
-#define RM1 16
-#define RM2 17
-#define RM3 18
-#define RM4 19
+#define RM0 13  // right-middle row
+#define RM1 14
+#define RM2 15
+#define RM3 16
+#define RM4 17
 
-#define LB1 23  // left-bottom row
-#define LB2 22
-#define LB3 21
+#define LB1 20  // left-bottom row
+#define LB2 19
+#define LB3 18
 
-#define RB1 24  // right-bottom row
-#define RB2 25
-#define RB3 26
+#define RB1 21  // right-bottom row
+#define RB2 22
+#define RB3 23
 
-#define LH0 29  // left thumb keys
-#define LH1 28
+#define LH0 25  // left thumb keys
+#define LH1 24
 
-#define RH0 30  // right thumb keys
-#define RH1 31
+#define RH0 26  // right thumb keys
+#define RH1 27
