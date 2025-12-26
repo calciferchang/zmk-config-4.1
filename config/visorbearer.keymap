@@ -17,10 +17,29 @@ ZMK_APPLY_MATRIX_TRANSFORM(visorbearer_13332_transform)
 #define NROW 2
 #define FUN  3
 
-#define QUICK_TAP_MS 175
-
 #define XXX &none
 #define ___ &trans
+
+/* GLOBAL DEFAULTS */
+
+#define QUICK_TAP_MS 175
+
+&soft_off { hold-time-ms = <5000>; };
+
+&sk {
+  release-after-ms = <900>;
+  quick-release;
+};
+
+&sl { // Allow sticky mods to chord across sticky layers.
+  ignore-modifiers;
+};
+
+&lt {
+  flavor = "balanced";
+  tapping-term-ms = <200>;
+  quick-tap-ms = <QUICK_TAP_MS>;
+};
 
 /* CUSTOM BEHAVIORS */
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
@@ -72,6 +91,7 @@ ZMK_MACRO(qu,
 #define COMBO_IDLE_SLOW 50
 
 /* Crossbody combos */
+ZMK_COMBO(softoff, &soft_off, LT0 RT0, APT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(capslock, &kp CAPSLOCK,  LT3 RT3,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(capsword, &caps_word,    LM1 RM1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
@@ -258,23 +278,4 @@ ZMK_COMBO(rpar,  &rpar_morph,  RT1 RM1,         APT NROW      NAV     , COMBO_TE
       };
 
     };
-};
-
-&lt {
-    tapping-term-ms = <150>;
-    quick-tap-ms = <200>;
-};
-
-&mt {
-    quick-tap-ms = <200>;
-};
-
-&sk {
-    release-after-ms = <500>;
-    quick-release;
-};
-
-&sl {
-    release-after-ms = <500>;
-    quick-release;
 };
