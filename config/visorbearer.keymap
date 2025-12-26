@@ -91,7 +91,7 @@ ZMK_MACRO(qu,
 #define COMBO_IDLE_SLOW 50
 
 /* Crossbody combos */
-ZMK_COMBO(softoff, &soft_off, LT0 RT0, APT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(softoff, &vb_soft_off, LT0 RT0, APT, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(capslock, &kp CAPSLOCK,  LT3 RT3,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(capsword, &caps_word,    LM1 RM1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
