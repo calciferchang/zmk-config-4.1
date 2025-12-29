@@ -121,10 +121,10 @@ ZMK_COMBO(redo,  &kp LS(LG(Z)),    LB2 LB1,                   NAV     , COMBO_TE
 ZMK_COMBO(nrow,  &mo NROW,         LH1 LH0,     APT                   , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 /* Vertical combos - left hand */
-ZMK_COMBO(at, &kp AT, LT3 LM3, APT NROW, COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(hash, &kp HASH, LT3 LM3, APT NROW, COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(dllr, &kp DLLR, LT2 LM2, APT NROW, COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(percent, &kp PERCENT, LT1 LM1, APT NROW, COMBO_TERM_SLOW, COMBO_IDLE_FAST)
-ZMK_COMBO(hash, &kp HASH, LT0 LM0, APT NROW, COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(at, &kp AT, LT0 LM0, APT NROW, COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 
 /* Horizontal combos - right hand */
 ZMK_COMBO(apos,  &kp APOS,         RT3 RT2,     APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
@@ -273,7 +273,7 @@ ZMK_COMBO(excl, &kp EXCL, RT0 RM0, APT NROW, COMBO_TERM_SLOW, COMBO_IDLE_FAST)
         //  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯   ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯
                             &kp DOT       &kp PERCENT   &kp N5                                        ___           ___           ___
         //                ╰─────────────┼─────────────┼─────────────┼─────────────╮   ╭─────────────┼─────────────┼─────────────┼─────────────╯
-                                                        ___           &kp N0            ___           ___
+                                                        &kp N0        &kp SPACE         ___           ___
         //                                            ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
         >;
       };
