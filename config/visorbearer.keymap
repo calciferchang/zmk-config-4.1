@@ -111,9 +111,6 @@ ZMK_COMBO(tab,          &hl LC(LGUI) TAB,      LM3 LM1,     APT NAV NROW        
 ZMK_COMBO(qu,           &qu,                   LM2 LM1,     APT                   , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(v,            &hl LA(LCTL) V,        LM3 LM2,     APT                   , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
-ZMK_COMBO(equal,        &kp EQUAL,             LB3 LB2,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(minus,        &kp MINUS,             LB2 LB1,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
-
 ZMK_COMBO(undo,         &kp LG(Z),             LB3 LB2,         NAV               , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(redo,         &kp LS(LG(Z)),         LB2 LB1,         NAV               , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
@@ -124,8 +121,8 @@ ZMK_COMBO(percent,      &kp PERCENT,           LT1 LM1,     APT     NROW        
 ZMK_COMBO(at,           &kp AT,                LT0 LM0,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 
 /* Horizontal combos - right hand */
-ZMK_COMBO(repeat,       &key_repeat,           RT3 RT2,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
-ZMK_COMBO(capsword_r,   &caps_word,            RT2 RT1,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(equal,        &kp EQUAL,             RT3 RT2,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(minus,        &kp MINUS,             RT2 RT1,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 
 ZMK_COMBO(enter_r,      &hr RC(RGUI) ENTER,    RM3 RM1,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(bksp_r,       &hr RC(RA(RGUI)) BKSP, RM3 RM2 RM1, APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
