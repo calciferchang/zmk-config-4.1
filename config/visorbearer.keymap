@@ -131,6 +131,8 @@ ZMK_COMBO(apos,         &hr RC(RALT) APOS,     RM3 RM2,     APT NAV NROW        
 ZMK_COMBO(fslash,       &kp SLASH,             RB3 RB2,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(excl,         &kp EXCL,              RB2 RB1,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 
+ZMK_COMBO(esc_thumb,    &kp ESC,               RH1 RH0,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+
 /* Vertical combos - right hand */
 ZMK_COMBO(star,         &kp STAR,              RT3 RM3,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(amps,         &kp AMPS,              RT2 RM2,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
