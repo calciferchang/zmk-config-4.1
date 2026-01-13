@@ -143,7 +143,7 @@ ZMK_COMBO(bt_clr,       &vb_bt_clr,            RT3 RT2 RT1,              FN     
 ZMK_COMBO(enter_r,      &hr RC(RGUI) ENTER,    RM3 RM1,     APT NAV NROW          , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(bksp_r,       &hr RC(RA(RGUI)) BKSP, RM3 RM2 RM1, APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(apos,         &hr RC(RALT) APOS,     RM3 RM2,     APT NAV NROW          , COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(shift_r,      &smart_shift,          RM2 RM1,     APT NAV NROW FUN      , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(shift_r,      &smart_shift,          RM2 RM1,     APT NAV NROW FN       , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 ZMK_COMBO(fslash,       &kp SLASH,             RB3 RB2,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(excl,         &kp EXCL,              RB2 RB1,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
