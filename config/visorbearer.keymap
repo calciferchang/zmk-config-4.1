@@ -121,8 +121,8 @@ ZMK_COMBO(tab,          &hl LC(LGUI) TAB,      LM3 LM1,     APT NAV NROW        
 ZMK_COMBO(shift_l,      &smart_shift,          LM2 LM1,     APT NAV NROW FN       , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(esc_l,        &hl LA(LCTL) ESC,      LM3 LM2,     APT                   , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
-ZMK_COMBO(q,            &kp Q,                 LT3 LT2,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(z,            &kp Z,                 LT2 LT1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(q,            &kp Q,                 LB3 LB2,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(z,            &kp Z,                 LB2 LB1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(undo,         &kp LG(Z),             LB3 LB2,         NAV               , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(redo,         &kp LS(LG(Z)),         LB2 LB1,         NAV               , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
