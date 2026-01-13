@@ -6,16 +6,18 @@
 
 #include "zmk-helpers/helper.h"
 #include "visorbearer.h"
+#include "mouse.dtsi"
 
 /* HOUSEKEEPING */
 // Apply matrix transform for physical layout
 ZMK_APPLY_MATRIX_TRANSFORM(visorbearer_13332_transform)
 
 // Define shorthands for QoL & readability
-#define APT  0
-#define NAV  1
-#define NROW 2
-#define FUN  3
+#define APT   0
+#define NAV   1
+#define NROW  2
+#define FN    3
+#define MOUSE 4
 
 #define XXX &none
 #define ___ &trans
@@ -55,6 +57,13 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
 
 ZMK_TRI_STATE(tabswapper, bindings = <&kt LCTL>, <&kp TAB>, <&kt LCTL>;
               ignored-key-positions = <LT3 LM1 LM2 LM3 LM4>;)
+
+// Smart mouse, requires tri-state module.
+ZMK_TRI_STATE(
+    smart_mouse, bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
+    ignored-key-positions =
+        <LT1 LT2 LH0 LH1 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3 RH0 RH1>;
+    ignored-layers = <MOUSE NAV FN>;
 
 // Define mod-morph with a *single* mod trigger for less repetition.
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
@@ -121,11 +130,13 @@ ZMK_COMBO(dllr,         &kp DLLR,              LT2 LM2,     APT     NROW        
 ZMK_COMBO(percent,      &kp PERCENT,           LT1 LM1,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(at,           &kp AT,                LT0 LM0,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 
+ZMK_COMBO(mouse,        &smart_mouse,          LM3 LB3,     APT NAV NROW          , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+
 /* Horizontal combos - right hand */
 ZMK_COMBO(equal,        &kp EQUAL,             RT3 RT2,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(minus,        &kp MINUS,             RT2 RT1,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
-ZMK_COMBO(bt_clr,       &vb_bt_clr,            RT3 RT2 RT1,              FUN      , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(bt_clr,       &vb_bt_clr,            RT3 RT2 RT1,              FN       , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 ZMK_COMBO(enter_r,      &hr RC(RGUI) ENTER,    RM3 RM1,     APT NAV NROW          , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(bksp_r,       &hr RC(RA(RGUI)) BKSP, RM3 RM2 RM1, APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
@@ -289,5 +300,19 @@ ZMK_COMBO(caret,        &kp CARET,             RT1 RM1,     APT     NROW        
         >;
       };
 
+      base {
+        display-name = "Mouse";
+        bindings = <
+        //                ╭─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────╮
+                            ___           ___           ___           ___               ___           &kp PG_UP     U_MS_U         &kp PG_DN
+        //  ╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
+              ___           ___           ___           ___           ___               U_WH_L        U_MS_L        U_MS_D         U_MS_R       U_WH_R
+        //  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯   ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯
+                            ___           ___           ___                                           &mkp LCLK     &mkp MCLK      &mkp RCLK
+        //                ╰─────────────┼─────────────┼─────────────┼─────────────╮   ╭─────────────┼─────────────┼─────────────┼─────────────╯
+                                                        ___           ___               U_WH_U        U_WH_D
+        //                                            ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
+        >;
+      };
     };
 };
