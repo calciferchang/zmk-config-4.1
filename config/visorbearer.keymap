@@ -6,7 +6,6 @@
 
 #include "zmk-helpers/helper.h"
 #include "visorbearer.h"
-#include "mouse.dtsi"
 
 /* HOUSEKEEPING */
 // Apply matrix transform for physical layout
