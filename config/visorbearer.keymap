@@ -107,13 +107,13 @@ ZMK_MACRO(qu,
 
 /* Crossbody combos */
 ZMK_COMBO(softoff,      &vb_soft_off,          LT0 RT0,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(capslock,     &kp CAPSLOCK,          LT3 RT3,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(capsword,     &caps_word,            LM1 RM1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 /* Horizontal combos - left hand */
 ZMK_COMBO(q,            &kp Q,                 LT3 LT2,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(z,            &kp Z,                 LT2 LT1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(esc_t,        &kp ESC,               LT3 LT1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(capslock_l,   &kp CAPSLOCK,          LT3 LT2 LT1, APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 // Combos overlapping HRMs are set up as hold-taps themselves to allow for instantaneous
 // chording of mods.
@@ -139,6 +139,7 @@ ZMK_COMBO(mouse,        &smart_mouse,          LM3 LB3,     APT NAV NROW        
 /* Horizontal combos - right hand */
 ZMK_COMBO(equal,        &kp EQUAL,             RT3 RT2,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(minus,        &kp MINUS,             RT2 RT1,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(capslock_r,   &kp CAPSLOCK,          RT3 RT2 RT1, APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 ZMK_COMBO(bt_clr,       &vb_bt_clr,            RT3 RT2 RT1,              FN       , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
