@@ -99,8 +99,8 @@ ZMK_MACRO(qu,
 */
 
 /* COMBOS */
-#define COMBO_TERM_FAST 18
-#define COMBO_TERM_SLOW 30
+#define COMBO_TERM_FAST 24
+#define COMBO_TERM_SLOW 40
 
 #define COMBO_IDLE_FAST 150
 #define COMBO_IDLE_SLOW 50
