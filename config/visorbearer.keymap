@@ -49,6 +49,7 @@ ZMK_APPLY_MATRIX_TRANSFORM(visorbearer_13332_transform)
 };
 
 
+
 /* ------------ Keymap helpers -------------*/
 
 // Alt+Tab swapper, requires tri-state module.
@@ -78,9 +79,12 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
   MAKE_HRM(hm_combo_##NAME, &kp, TAP, SIDE THUMBS)                             \
   ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
 
+
+
 /* ------------ Combos ---------------------*/
 
 #include "combos.dtsi" // Combos must be sourced after HRM workaround.
+
 
 
 /* ------------ Custom behaviors -----------*/
@@ -100,6 +104,8 @@ SIMPLE_MORPH(bksp_del, SFT, &kp BACKSPACE, &kp DELETE)
 ZMK_MACRO(qu,
   bindings = <&kp Q &kp U>;
 )
+
+
 
 / {
     behaviors {
