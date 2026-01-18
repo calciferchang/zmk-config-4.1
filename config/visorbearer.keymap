@@ -140,6 +140,7 @@ ZMK_MACRO(qu,
         bindings = <&sk LSHFT>, <&caps_word>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
       };
+    };
 
     conditional_layers {
       compatible = "zmk,conditional-layers";
