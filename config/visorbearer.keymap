@@ -101,7 +101,7 @@ SIMPLE_MORPH(rpar_morph, SFT, &kp RPAR, &kp GT)
 // Tap: backspace | Shift + tap: delete
 SIMPLE_MORPH(bksp_del, SFT, &kp BACKSPACE, &kp DELETE)
 
-SIMPLE_MORPH(smart_shift, SFT, &kp SHIFT, &caps_word)
+SIMPLE_MORPH(smart_shift, SFT, &kp LSHIFT, &caps_word)
 
 ZMK_MACRO(qu,
   bindings = <&kp Q &kp U>;
