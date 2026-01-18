@@ -59,8 +59,6 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 };
 
 /* CUSTOM BEHAVIORS */
-#define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
-#define MEH LS(LC(LALT))
 
 // Alt+Tab swapper, requires tri-state module.
 ZMK_TRI_STATE(swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
@@ -96,16 +94,6 @@ ZMK_MACRO(qu,
 
 / {
     behaviors {
-      as: auto_shift {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        tapping_term_ms = <250>;
-        // quick_tap_ms = <0>;
-        require-prior-idle-ms = <100>;
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
-      };
-
       ht: hold_tap {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
@@ -146,30 +134,12 @@ ZMK_MACRO(qu,
         hold-trigger-key-positions = <KEYS_L THUMBS>;
         hold-trigger-on-release;
       };
-
-      sabk: shift_to_alt_backspace {
-        compatible = "zmk,behavior-mod-morph";
-        #binding-cells = <0>;
-        bindings = <&kp BSPC>, <&kp LA(BSPC)>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
-      };
-
       smart_shift: smart_shift {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&sk LSHFT>, <&caps_word>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
       };
-
-      sym_bspc: left_thumb_hold_tap {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        tapping-term-ms = <150>;
-        quick-tap-ms = <200>;
-        bindings = <&mo>, <&sabk>;
-      };
-    };
 
     conditional_layers {
       compatible = "zmk,conditional-layers";
