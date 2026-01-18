@@ -43,7 +43,6 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
 /* GLOBAL DEFAULTS */
 
-
 &sk {
   release-after-ms = <900>;
   quick-release;
@@ -193,7 +192,7 @@ ZMK_MACRO(qu,
         //  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯   ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯
                             &kp C         &kp G         &kp D                                         &kp M         &comma_morph  &dot_morph
         //                ╰─────────────┼─────────────┼─────────────┼─────────────╮   ╭─────────────┼─────────────┼─────────────┼─────────────╯
-                                                      &lt NPAD ENTER  &lt NAV SPACE     &lt NROW E    &smart_shift
+                                                      &smart_shift    &lt NAV SPACE     &lt NROW E    &smart_shift
         //                                            ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
         >;
       };
