@@ -107,7 +107,6 @@ ZMK_MACRO(qu,
 
 /* Crossbody combos */
 ZMK_COMBO(softoff,      &vb_soft_off,          LT0 RT0,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(capsword,     &caps_word,            LM1 RM1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 /* Horizontal combos - left hand */
 ZMK_COMBO(q,            &kp Q,                 LT3 LT2,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
@@ -117,14 +116,16 @@ ZMK_COMBO(capslock_l,   &kp CAPSLOCK,          LT3 LT2 LT1, APT                 
 
 // Combos overlapping HRMs are set up as hold-taps themselves to allow for instantaneous
 // chording of mods.
-ZMK_COMBO(bksp_l,       &hl LA(LC(LGUI))BKSP,  LM3 LM2 LM1, APT NAV               , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
-ZMK_COMBO(tab,          &hl LC(LGUI) TAB,      LM3 LM1,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
-ZMK_COMBO(v,            &kp V,                 LM3 LM2,     APT                   , COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(qu,           &qu,                   LM2 LM1,     APT                   , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(bksp_l,       &hl LA(LC(LGUI)) BKSP, LM3 LM2 LM1, APT NAV               , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(qu,           &qu,                   LM3 LM1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(z,            &hl LS(LALT) Z,        LM3 LM1,         NAV               , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(lbkt,         &hl LS(LALT) LBKT,     LM3 LM1,             NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(v,            &hl LC(LALT) V,        LM3 LM2,     APT                   , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(q,            &hl LC(LALT) Q,        LM3 LM2,         NAV               , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(lpar_morph,   &lpar_morph,           LM3 LM2,             NROW          , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(shift_l,      &smart_shift,          LM2 LM1,     APT NAV NROW          , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
-
-ZMK_COMBO(esc,          &kp ESC,               LB3 LB2,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(shift_l,      &smart_shift,          LB2 LB1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(enter,        &kp ENTER,             LB2 LB1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(undo,         &kp LG(Z),             LB3 LB2,         NAV               , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(redo,         &kp LS(LG(Z)),         LB2 LB1,         NAV               , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
@@ -134,8 +135,6 @@ ZMK_COMBO(dllr,         &kp DLLR,              LT2 LM2,     APT     NROW        
 ZMK_COMBO(percent,      &kp PERCENT,           LT1 LM1,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(at,           &kp AT,                LT0 LM0,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 
-ZMK_COMBO(mouse,        &smart_mouse,          LM3 LB3,     APT NAV NROW          , COMBO_TERM_FAST, COMBO_IDLE_FAST)
-
 /* Horizontal combos - right hand */
 ZMK_COMBO(equal,        &kp EQUAL,             RT3 RT2,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(minus,        &kp MINUS,             RT2 RT1,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
@@ -143,15 +142,17 @@ ZMK_COMBO(capslock_r,   &kp CAPSLOCK,          RT3 RT2 RT1, APT                 
 
 ZMK_COMBO(bt_clr,       &vb_bt_clr,            RT3 RT2 RT1,              FN       , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
-ZMK_COMBO(enter_r,      &hr RC(RGUI) ENTER,    RM3 RM1,     APT NAV NROW          , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(enter_r,      &hr RC(RGUI) ENTER,    RM3 RM1,     APT                   , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(equal,        &hr RC(RGUI) EQUAL,    RM3 RM1,         NAV               , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(rbkt,         &hr RC(RGUI) RBKT,     RM3 RM1,             NROW          , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(apos,         &hr RC(RALT) APOS,     RM3 RM2,     APT                   , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(minus,        &hr RC(RALT) MINUS,    RM3 RM2,         NAV               , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(rpar_morph,   &rpar_morph,           RM3 RM2,     APT                   , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(bksp_r,       &hr RC(RA(RGUI)) BKSP, RM3 RM2 RM1, APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
-ZMK_COMBO(apos,         &hr RC(RALT) APOS,     RM3 RM2,     APT NAV NROW          , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(shift_r,      &smart_shift,          RM2 RM1,     APT NAV NROW FN       , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 ZMK_COMBO(fslash,       &kp SLASH,             RB3 RB2,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(excl,         &kp EXCL,              RB2 RB1,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
-
-ZMK_COMBO(esc_thumb,    &kp ESC,               RH1 RH0,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 
 /* Vertical combos - right hand */
 ZMK_COMBO(star,         &kp STAR,              RT3 RM3,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
@@ -267,7 +268,7 @@ ZMK_COMBO(caret,        &kp CARET,             RT1 RM1,     APT     NROW        
         //                ╭─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────╮
                       &mt LSHIFT LS(TAB)  &tabswapper   &swapper      ___               ___           ___           ___           ___
         //  ╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
-              &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     ___               ___           ___           ___           ___           ___
+              &hl LGUI LEFT &hl LALT DOWN &hl LCTL UP   &hl LSHIFT RIGHT ___            ___           ___           ___           ___           ___
         //  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯   ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯
                             &kp LG(C)     &kp LG(X)     &kp LG(V)                                    ___           ___           ___
         //                ╰─────────────┼─────────────┼─────────────┼─────────────╮   ╭─────────────┼─────────────┼─────────────┼─────────────╯
