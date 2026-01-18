@@ -30,9 +30,7 @@ ZMK_APPLY_MATRIX_TRANSFORM(visorbearer_13332_transform)
 
 /* GLOBAL DEFAULTS */
 
-#define QUICK_TAP_MS 175
-
-&soft_off { hold-time-ms = <5000>; };
+#define QUICK_TAP_MS 220
 
 &sk {
   release-after-ms = <900>;
