@@ -110,7 +110,7 @@ ZMK_COMBO(softoff,      &vb_soft_off,          LT0 RT0,     APT                 
 
 /* Horizontal combos - left hand */
 ZMK_COMBO(esc_l,        &kp ESC,               LT3 LT2,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(tab_l,        &kp TAB,               LT2 LT1,     APT                   , TOMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(tab_l,        &kp TAB,               LT2 LT1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(capslock_l,   &kp CAPSLOCK,          LT3 LT2 LT1, APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 // Combos overlapping HRMs are set up as hold-taps themselves to allow for instantaneous
