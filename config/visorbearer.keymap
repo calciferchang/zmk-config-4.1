@@ -44,7 +44,7 @@ ZMK_APPLY_MATRIX_TRANSFORM(visorbearer_13332_transform)
 
 &lt {
   flavor = "balanced";
-  tapping-term-ms = <240>;
+  tapping-term-ms = <260>;
   quick-tap-ms = <QUICK_TAP_MS>;
 };
 
