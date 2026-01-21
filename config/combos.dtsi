@@ -35,8 +35,8 @@ ZMK_COMBO(lpar_morph,   &lpar_morph,           LM3 LM2,             NROW        
 ZMK_COMBO(shift_l,      &smart_shift,          LM2 LM1,     APT NAV NROW          , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 ZMK_COMBO(enter,        &kp ENTER,             LB2 LB1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(undo,         &kp LG(Z),             LB3 LB2,         NAV               , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(redo,         &kp LS(LG(Z)),         LB2 LB1,         NAV               , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(undo,         &kp LG(Z),             LB2 LB1,         NAV               , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(redo,         &kp LS(LG(Z)),         LB3 LB1,         NAV               , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 /* Vertical combos - left hand */
 ZMK_COMBO(hash,         &kp HASH,              LT3 LM3,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
@@ -51,17 +51,17 @@ ZMK_COMBO(capslock_r,   &kp CAPSLOCK,          RT3 RT2 RT1, APT                 
 
 ZMK_COMBO(bt_clr,       &vb_bt_clr,            RT3 RT2 RT1,              FN       , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
-ZMK_COMBO(enter_r,      &hr RC(RGUI) ENTER,    RB3 RB2,     APT                   , COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(equal,        &hr RC(RGUI) EQUAL,    RB3 RB2,         NAV               , COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(rbkt,         &hr RC(RGUI) RBKT,     RB3 RB2,             NROW          , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(enter_r,      &hr RC(RGUI) ENTER,    RM3 RM1,     APT NAV NROW          , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(apos,         &hr RC(RALT) APOS,     RM3 RM2,     APT                   , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(minus,        &hr RC(RALT) MINUS,    RM3 RM2,         NAV               , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(rpar_morph,   &rpar_morph,           RM3 RM2,             NROW          , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(bksp_r,       &hr RC(RA(RGUI)) BKSP, RM3 RM2 RM1, APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(shift_r,      &smart_shift,          RM2 RM1,     APT NAV NROW FN       , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
-ZMK_COMBO(fslash,       &kp SLASH,             RB3 RB2,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
-ZMK_COMBO(excl,         &kp EXCL,              RB2 RB1,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(fslash,       &kp SLASH,             RB2 RB1,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(excl,         &kp EXCL,              RB3 RB2,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(equal,        &hr RC(RGUI) EQUAL,    RB3 RB2,         NAV               , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(rbkt,         &hr RC(RGUI) RBKT,     RB3 RB2,             NROW          , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 /* Vertical combos - right hand */
 ZMK_COMBO(star,         &kp STAR,              RT3 RM3,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
