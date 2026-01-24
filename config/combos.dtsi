@@ -33,7 +33,7 @@ ZMK_COMBO(v,            &hl LC(LALT) V,        LM3 LM2,     APT                 
 ZMK_COMBO(q,            &hl LC(LALT) Q,        LM3 LM2,         NAV               , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(lpar_morph,   &lpar_morph,           LM3 LM2,             NROW          , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(shift_l,      &smart_shift,          LM2 LM1,     APT NAV NROW          , COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(tab_l,        &kp TAB,               LM3 LM1,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(tab_l,        &hl LS(LALT) TAB,      LM3 LM1,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 ZMK_COMBO(enter,        &kp ENTER,             LB2 LB1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(undo,         &kp LG(Z),             LB2 LB1,         NAV               , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
