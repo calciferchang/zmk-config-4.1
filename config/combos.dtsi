@@ -47,7 +47,7 @@ ZMK_COMBO(at,           &kp AT,                LT0 LM0,     APT     NROW        
 
 /* Horizontal combos - right hand */
 ZMK_COMBO(equal,        &kp EQUAL,             RT3 RT2,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(minus,        &kp MINUS,             RT2 RT1,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(minus_r,      &kp MINUS,             RT2 RT1,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(capslock_r,   &kp CAPSLOCK,          RT3 RT2 RT1, APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 ZMK_COMBO(bt_clr,       &vb_bt_clr,            RT3 RT2 RT1,              FN       , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
@@ -59,10 +59,10 @@ ZMK_COMBO(rpar_morph,   &rpar_morph,           RM3 RM2,             NROW        
 ZMK_COMBO(bksp_r,       &hr RC(RA(RGUI)) BKSP, RM3 RM2 RM1, APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(shift_r,      &smart_shift,          RM2 RM1,     APT NAV NROW FN       , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
-ZMK_COMBO(fslash,       &kp SLASH,             RB2 RB1,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
-ZMK_COMBO(excl,         &kp EXCL,              RB3 RB2,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
-ZMK_COMBO(equal,        &hr RC(RGUI) EQUAL,    RB3 RB2,         NAV               , COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(rbkt,         &hr RC(RGUI) RBKT,     RB3 RB2,             NROW          , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(fslash,       &kp SLASH,             RT2 RT1,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(excl,         &kp EXCL,              RT3 RT2,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(equal,        &hr RC(RGUI) EQUAL,    RT3 RT2,         NAV               , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(rbkt,         &hr RC(RGUI) RBKT,     RT3 RT2,             NROW          , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 /* Vertical combos - right hand */
 ZMK_COMBO(star,         &kp STAR,              RT3 RM3,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
