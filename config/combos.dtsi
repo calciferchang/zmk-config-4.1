@@ -24,7 +24,6 @@ ZMK_COMBO(capslock_l,   &kp CAPSLOCK,          LT3 LT2 LT1, APT                 
 
 ZMK_COMBO(qu,           &qu,                   LT3 LT2,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(z,            &hl LS(LALT) Z,        LT3 LT2,         NAV               , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
-ZMK_COMBO(lbkt,         &hl LS(LALT) LBKT,     LT3 LT2,             NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 
 // Combos overlapping HRMs are set up as hold-taps themselves to allow for instantaneous
 // chording of mods.
@@ -59,10 +58,8 @@ ZMK_COMBO(rpar_morph,   &rpar_morph,           RM3 RM2,             NROW        
 ZMK_COMBO(bksp_r,       &hr RC(RA(RGUI)) BKSP, RM3 RM2 RM1, APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(shift_r,      &smart_shift,          RM2 RM1,     APT NAV NROW FN       , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
-ZMK_COMBO(fslash,       &kp SLASH,             RT2 RT1,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
-ZMK_COMBO(excl,         &kp EXCL,              RT3 RT2,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
-ZMK_COMBO(equal,        &hr RC(RGUI) EQUAL,    RT3 RT2,         NAV               , COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(rbkt,         &hr RC(RGUI) RBKT,     RT3 RT2,             NROW          , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(excl,         &kp EXCL,              RB3 RB2,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(fslash,       &kp SLASH,             RB2 RB1,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 
 /* Vertical combos - right hand */
 ZMK_COMBO(star,         &kp STAR,              RT3 RM3,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
